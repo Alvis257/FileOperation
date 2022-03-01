@@ -9,8 +9,12 @@ namespace test2
 
         public class ExThread
         {
+            //threads that are set to variables in Main()
+            //cikle through thread sleep and calls to the write function
+            //At a pre set point sleeps for a set amount of time 
             public static void thread1()
             {
+             
                 for (int i = 0; i < 4; i++)
                 {
                     if (i == 2)
@@ -63,7 +67,7 @@ namespace test2
                 }
             }
         }
-
+        //writes to console a string value and stops for 100ms
         static void write1()
         {
             Console.WriteLine("1");
@@ -84,9 +88,11 @@ namespace test2
 
         static void Main(string[] args)
         {
+            //sets threads to a variable
             Thread a = new Thread(ExThread.thread1);
             Thread b = new Thread(ExThread.thread2);
             Thread c = new Thread(ExThread.thread3);
+            //starts threads
             a.Start();
             b.Start();
             c.Start();
