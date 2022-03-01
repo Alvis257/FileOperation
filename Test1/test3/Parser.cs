@@ -16,7 +16,7 @@ namespace test3
             Console.WriteLine(await getContent());
             Console.WriteLine(await getContentWithoutUnicode());
             Console.WriteLine();
-            saveContent("2301923");
+            saveContent("<new Content>");
             Console.WriteLine();
             Console.WriteLine(await getContent());
             Console.WriteLine(await getContentWithoutUnicode());
