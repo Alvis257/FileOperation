@@ -53,7 +53,7 @@ namespace test3
             FileStream i = new FileStream(filePath, FileMode.Open);
             string output = "";
             int data;
-            lock (i)
+            lock (requestLock)
             {
                 while ((data = i.ReadByte()) > 0)
                 {

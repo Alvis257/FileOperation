@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -42,21 +39,23 @@ namespace test2
                     {
                         await Task.Delay(10);
                     }
+
                     if (i == 5)
                     {
                         await Task.Delay(50);
-                    } 
-                   
+                    }
+
                     write2();
                     if (i == 3)
                     {
                         await Task.Delay(70);
                     }
+
                     if (i == 1)
                     {
-                        await Task.Delay(90); 
+                        await Task.Delay(90);
                     }
-                   
+
                 }
             }
 
@@ -68,6 +67,7 @@ namespace test2
                     {
                         await Task.Delay(30);
                     }
+
                     if (i == 7)
                     {
                         await Task.Delay(100);
@@ -79,7 +79,7 @@ namespace test2
                     {
                         await Task.Delay(120);
                     }
-                    
+
                 }
             }
         }
@@ -101,7 +101,6 @@ namespace test2
             Console.WriteLine("3");
             await Task.Delay(300);
         }
-
 
         static void Main(string[] args)
         {
