@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace test2
 {
@@ -21,16 +17,16 @@ namespace test2
                     {
                         Thread.Sleep(60);
                     }
+
                     write1();
                     if (i == 0)
                     {
                         Thread.Sleep(2050);
                     }
 
-                    
+
                 }
             }
-
 
             public static void thread2()
             {
@@ -40,6 +36,7 @@ namespace test2
                     {
                         Thread.Sleep(100);
                     }
+
                     write2();
                     if (i == 1)
                     {
@@ -58,7 +55,7 @@ namespace test2
                     }
 
                     write3();
-                   
+
                     if (i == 6)
                     {
                         Thread.Sleep(1200);
@@ -93,7 +90,7 @@ namespace test2
             a.Start();
             b.Start();
             c.Start();
-            
+
             Console.ReadKey();
         }
     }

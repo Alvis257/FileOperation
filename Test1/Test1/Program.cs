@@ -20,10 +20,9 @@ public class StructFile
 {
     private static readonly string Path = "..//..//text.txt";
 
-
     public static async Task Main()
     {
-        
+
         var dataList = new List<string>(File.ReadAllLines(Path));
         var data = new List<string>();
 
@@ -32,18 +31,16 @@ public class StructFile
             var cleanData = variable.Split(';');
             data.Add(cleanData[0]);
         }
-        
 
-        var boxOfData = Converter(3,data);
+        var boxOfData = Converter(3, data);
         var boxOfData2 = Converter(4, data);
         var boxOfData3 = Converter(5, data);
         var copyStruct = new List<string>();
 
-
         var structWithData = new Items
         {
             CRC = Convert.ToUInt32(data[0]),
-            UseCalibration= Convert.ToInt16(data[1]),
+            UseCalibration = Convert.ToInt16(data[1]),
             Scale = Convert.ToInt32(data[2]),
             XCalVector = boxOfData.ToArray(),
             YCalVector = boxOfData2.ToArray(),
@@ -81,8 +78,8 @@ public class StructFile
 
         CreatJason(fileName, copyStruct);
         string dataFromJason = ReadJason(fileName);
-       
-        Console.WriteLine(string.Join(",",dataFromJason));
+
+        Console.WriteLine(string.Join(",", dataFromJason));
         Console.ReadKey();
     }
 
@@ -102,10 +99,11 @@ public class StructFile
 
     public static string ReadJason(string fileName)
     {
-        return File.ReadAllText(fileName); ;
+        return File.ReadAllText(fileName);
+        ;
     }
 
-    public static async void CreatJason(string fileName, List<string> copyStruct )
+    public static async void CreatJason(string fileName, List<string> copyStruct)
     {
         using (FileStream stream = File.Create(fileName))
         {

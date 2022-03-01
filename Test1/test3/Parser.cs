@@ -16,7 +16,7 @@ namespace test3
             Console.WriteLine(await getContent());
             Console.WriteLine(await getContentWithoutUnicode());
             Console.WriteLine();
-            saveContent("2301923");
+            saveContent("<new Content>");
             Console.WriteLine();
             Console.WriteLine(await getContent());
             Console.WriteLine(await getContentWithoutUnicode());
@@ -53,7 +53,7 @@ namespace test3
             FileStream i = new FileStream(filePath, FileMode.Open);
             string output = "";
             int data;
-            lock (i)
+            lock (requestLock)
             {
                 while ((data = i.ReadByte()) > 0)
                 {
